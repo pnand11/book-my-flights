@@ -2,12 +2,14 @@
 import './App.css';
 import { BrowserRouter,Routes,Route } from 'react-router-dom'
 import About from './Component/About';
-import Home from './Component/Home';
+// import Home from './Component/Home';
 import Ticket from './Component/Ticket';
 import Service from './Component/Service';
 import Header from './Component/Header';
 import Register from './Component/Register';
 import SignUp from './Component/SignUp';
+import Home from './Component/Home';
+
 
 
 
@@ -31,6 +33,7 @@ function App() {
 
 </Routes>
 </BrowserRouter>
+
 
  
 
