@@ -1,14 +1,20 @@
-import React from 'react'
+
+import {  Outlet } from 'react-router-dom'
+import AddFlights from './Service/AddFlights'
+
+
 
 function Service() {
+
   return (
-    <div>
-      <div className="service">
-        <div className="serv">Service 1</div>
-        <div className="serv">Service 2</div>
-        <div className="serv">Service 3</div>
-        <div className="serv">Service 4</div>
-      </div>
+    <div className='service'>
+   
+      
+
+
+
+    <AddFlights/>
+      <Outlet/>
     </div>
   )
 }
