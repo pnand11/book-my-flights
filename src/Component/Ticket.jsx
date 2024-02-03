@@ -5,7 +5,7 @@ function Ticket() {
     let [flights, setFlight] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:8080/flights/getFlights')
+        fetch('https://bookmyflights-server.onrender.com/flights/getFlights')
             .then((response) => response.json())
             .then((data) => {
                 console.log(data);

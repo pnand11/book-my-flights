@@ -5,7 +5,7 @@ function Postdata(props) {
 
   const handlePostData = async () => {
     try {
-      const response = await fetch('http://localhost:8080/passengers/savePassenger', {
+      const response = await fetch('https://bookmyflights-server.onrender.com/passengers/savePassenger', {
         method: 'POST',
 
         body: JSON.stringify(postData),
