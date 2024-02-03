@@ -18,7 +18,7 @@ A flight booking application that allows users to search for flights, book ticke
 
 ## Installation
 
-1. Clone the repository: `git clone https://github.com/your-username/your-repo.git`
+1. Clone the repository: `git clone https://github.com/aadium/book-my-flights.git`
 2. Install the dependencies: `npm install`
 4. Start the application: `npm start`
 
