@@ -1,4 +1,4 @@
-# Project Name
+# Book My Flights
 
 [![License](https://img.shields.io/badge/license-MIT-red.svg)](LICENSE)
 
