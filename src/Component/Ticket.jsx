@@ -1,4 +1,3 @@
-
 import React from 'react'
 import { useEffect,useState } from 'react';
 import FlightDetails from './FlightDetails';
@@ -39,7 +38,6 @@ function Ticket() {
                         {
                             flights.map((flight,index)=>{
                                 return(
-                                  
                                     <FlightDetails  Airlines={flight.airlines} FlightNumbers={flight.FlightNumbers} Source={flight.source} DepartureTime={flight.departureTime} ArraivalTime={flight.arrivalTime} destination={flights.destination} duration={flights.flightDuration}/>
                                 )
                             })

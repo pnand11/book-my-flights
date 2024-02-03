@@ -1,6 +1,4 @@
 import React from 'react'
-import { useEffect,useState } from 'react';
-import FlightDetails from './FlightDetails';
 
 function Home() {
       return(
@@ -8,4 +6,4 @@ function Home() {
       )
 }
 
-export default Home
+export default Home;
