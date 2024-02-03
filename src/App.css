@@ -156,3 +156,38 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 12px;
 }
+<<<<<<< Updated upstream
+=======
+/* ----Registration */
+
+.register{
+  height: fit-content;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+.register-form
+{
+    background-color: lightgray;
+    padding: 20px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+.register-form>input{
+  padding: 20px;
+  width: 300px;
+}
+.register-form>button{
+  padding: 20px;
+  width: 300px;
+  background-color: lightblue;
+  font-size: larger;
+  font-weight: bold;
+  border-radius: 30px;
+  border-color: solid grey 4px;
+}
+>>>>>>> Stashed changes
