@@ -1,11 +1,8 @@
 import React from 'react'
-<<<<<<< Updated upstream
 
-function Register() {
-  return (
-    <div>
-      <h1>this is Register</h1>
-=======
+
+
+
 import { useState } from 'react'
 import Postdata from './Postdata';
 
@@ -54,7 +51,8 @@ function Register() {
 
 
       
->>>>>>> Stashed changes
+
+
     </div>
     
     </div>
