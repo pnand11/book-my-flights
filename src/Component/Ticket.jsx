@@ -1,22 +1,3 @@
-// import React from 'react'
-
-// function Ticket() {
-//   return (
-//     <div>
-//     <div className="product">
-
-//     <div className="prod">Product 1</div>
-//     <div className="prod">Product 2</div>
-//     <div className="prod">Product 3</div>
-//     <div className="prod">Product 4</div>
-
-// </div>
-//     </div>
-//   )
-// }
-
-// export default Ticket
-
 import React from 'react'
 import { useEffect,useState } from 'react';
 import FlightDetails from './FlightDetails';
@@ -57,8 +38,7 @@ function Ticket() {
                         {
                             flights.map((flight,index)=>{
                                 return(
-                                  
-                                    <FlightDetails  Airlines={flight.airlines[0]} FlightNumbers={flight.FlightNumbers[0]} Source={flight.source} DepartureTime={flight.departureTime} ArraivalTime={flight.arrivalTime} destination={flights.destination} duration={flights.flightDuration}/>
+                                    <FlightDetails  Airlines={flight.airlines} FlightNumbers={flight.FlightNumbers} Source={flight.source} DepartureTime={flight.departureTime} ArraivalTime={flight.arrivalTime} destination={flights.destination} duration={flights.flightDuration}/>
                                 )
                             })
                         }
