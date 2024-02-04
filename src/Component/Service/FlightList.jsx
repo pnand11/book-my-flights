@@ -15,9 +15,6 @@ function FlightList() {
           setIsLoaded(true);
           setFlight(result);
         },
-        // Note: it's important to handle errors here
-        // instead of a catch() block so that we don't swallow
-        // exceptions from actual bugs in components.
         (error) => {
           setIsLoaded(true);
           setError(error);
@@ -38,7 +35,6 @@ function FlightList() {
       <table className="Table">
         <thead className='TableHead'>
           <tr>
-            <th>flightId </th>
             <th> airlines </th>
             <th>flightNumbers</th>
             <th>flightDuration</th>
@@ -54,7 +50,6 @@ function FlightList() {
         <tbody>
           {Flight.map((Flight) => (
             <tr key={Flight.id}>
-              <td>{Flight.flightId}</td>
               <td>{Flight.airlines}</td>
               <td>{Flight.flightNumbers}</td>
               <td>{Flight.flightDurations}</td>
@@ -64,7 +59,7 @@ function FlightList() {
               <td>{Flight.arrivalTime}</td>
               <td>{Flight.seatsAvailable}</td>
               <td>{Flight.layovers}</td>
-              <td className='fare'>{Flight.ayoverDurations}</td>
+              <td className='fare'>{Flight.layoverDurations}</td>
               <td >
                 <button className='button-49' onClick={() => DeleteFlight(Flight.id)} >delete</button>
               </td>
