@@ -35,33 +35,47 @@ function FlightList() {
       <table className="Table">
         <thead className='TableHead'>
           <tr>
-            <th> airlines </th>
-            <th>flightNumbers</th>
-            <th>flightDuration</th>
-            <th> source</th>
-            <th> destination</th>
-            <th>departureTime</th>
-            <th> arrivalTime</th>
-            <th> seatsAvailable</th>
-            <th>layovers</th>
-            <th>layoverDurations</th>
+            <th>Airlines</th>
+            <th>Flight Numbers</th>
+            <th>Departure</th>
+            <th>Arrival</th>
+            <th>Departure Time</th>
+            <th>Arrival Time</th>
+            <th>Available Seats</th>
+            <th>Layovers</th>
+            <th>Layover Durations</th>
           </tr>
         </thead>
         <tbody>
           {Flight.map((Flight) => (
             <tr key={Flight.id}>
-              <td>{Flight.airlines}</td>
-              <td>{Flight.flightNumbers}</td>
-              <td>{Flight.flightDurations}</td>
+              <td>
+                {Flight.airlines.map((airline, index) => (
+                  <div key={index}>{airline}</div>
+                ))}
+              </td>
+              <td>
+                {Flight.flightNumbers.map((flightNumber, index) => (
+                  <div key={index}>{flightNumber}</div>
+                ))}
+              </td>
               <td>{Flight.source}</td>
               <td>{Flight.destination}</td>
               <td>{Flight.departureTime}</td>
               <td>{Flight.arrivalTime}</td>
               <td>{Flight.seatsAvailable}</td>
-              <td>{Flight.layovers}</td>
-              <td className='fare'>{Flight.layoverDurations}</td>
-              <td >
-                <button className='button-49' onClick={() => DeleteFlight(Flight.id)} >delete</button>
+              <td>
+                {Flight.layovers.map((layover, index) => (
+                  <div key={index}>{layover}</div>
+                ))}
+              </td>
+              <td>
+                {Flight.layoverDurations.map((layoverDuration, index) => (
+                  <div key={index}>{layoverDuration}</div>
+                ))}
+              </td>
+              <td>
+                <button className='button-49' onClick={() => DeleteFlight(Flight.id)}>delete</button>
               </td>
             </tr>
           ))
