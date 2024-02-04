@@ -1,10 +1,9 @@
-
 import { useState,useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from 'react-axiom'
+import axios from 'axios';
 
 function CheckIn() {
-    let history = useNavigate();
+    let navigate = useNavigate();
 
     const [Flight, setFlight]= useState(
         []
@@ -13,7 +12,7 @@ function CheckIn() {
         const [isLoaded, setIsLoaded] = useState(false);
     
         useEffect(() => {
-            fetch("http://localhost:8085/Flight-Booking/getFlight")
+            fetch("http://localhost:8080/Flight-Booking/getFlight")
               .then(res => res.json())
               .then(
                 (result) => {
@@ -48,7 +47,7 @@ function CheckIn() {
 	};
 	const onSubmit= async e=>{
 		e.preventDefault();
-		await axios.post("http://localhost:8003/savePassenger",Passenger)
+		await axios.post("http://localhost:8080/savePassenger",Passenger)
         .then(
             alert("SUBMIT"),
             useNavigate.navagite("/payment", {})
@@ -58,7 +57,7 @@ function CheckIn() {
   return (
     
     
-    <div className='CheackIn'>
+    <div className='CheckIn'>
      <div className='popup'>
          <h2 className='hedu'>Basic Information</h2>
          <div className='fr'>
@@ -103,7 +102,7 @@ function CheckIn() {
                 placeholder='Email'onChange={e=>onChange(e)}
                 />
                 <br />
-                <label  for="age" aria-hidden="true">Your Date of Bairth</label>
+                <label  for="age" aria-hidden="true">Your Date of Birth</label>
                 <label className='gender' for="gender" aria-hidden="true">Select your Gender</label>
                 <br />
             <input 
@@ -143,7 +142,7 @@ function CheckIn() {
                 placeholder='Pincode'onChange={e=>onChange(e)}
                 />
             <br /> <br />
-            <button className='CheackIn' type='submit'>Cheack- in</button>
+            <button className='CheckIn' type='submit'>Cheack- in</button>
         </form>
         </div>
            

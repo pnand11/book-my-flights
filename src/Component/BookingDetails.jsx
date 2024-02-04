@@ -1,5 +1,3 @@
-
-
 import {  Outlet} from 'react-router-dom'
 import Search from './Service/Search'
 import SearchList from './Service/SearchList'

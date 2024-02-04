@@ -1,4 +1,3 @@
-
 import {Navigate, useNavigate} from "react-router-dom"
 import { useState ,useEffect } from 'react';
 import axios from 'axios'
@@ -14,7 +13,7 @@ function SearchList() {
     const [buttonPopup, setPopup] = useState(false);
 
     useEffect(() => {
-        fetch("https://bookmyflights-server.onrender.com/flights/GetFlight()")
+        fetch("https://bookmyflights-server.onrender.com/flights/getFlight")
           .then(res => res.json())
           .then(
             (result) => {
