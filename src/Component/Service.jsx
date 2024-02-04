@@ -8,13 +8,8 @@ function Service() {
 
   return (
     <div className='service'>
-   
-      
-
-
-
-    <AddFlights/>
-      <Outlet/>
+      <AddFlights/>
+        <Outlet/>
     </div>
   )
 }

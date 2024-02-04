@@ -1,6 +1,5 @@
-
 import './App.css';
-import { BrowserRouter,Routes,Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import About from './Component/About';
 import Home from './Component/Home';
 import Ticket from './Component/Ticket';
@@ -15,48 +14,31 @@ import Search from './Component/Service/Search';
 import SearchList from './Component/Service/SearchList';
 import CheckIn from './Component/CheckIn';
 
-
 function App() {
   return (
-  <div>
-  <BrowserRouter>
-    <Header/>
-
-<Routes>
-
-<Route  path='/' element={<Home/>}/>
-<Route  path='/about/*' element={<About/>}>
-
-
-</Route>
- 
-<Route  path='/ticket/*' element={<Ticket/>}>
-<Route path='list' element={<FlightList/>}/>
-</Route>
-<Route  path='/service/s1/s2/s3/*' element={<Service/>}>
-<Route path='addflight' element={<AddFlights/>}/>
-
-</Route>
-<Route path='/bookingdetails/*' element={<BookingDetails/>}>
-<Route path='search' element={<Search/>}/>
-<Route path='SearchCon' element={<SearchList/>}/>
-
-</Route>
-<Route path='CheckIn' element={<CheckIn/>}/>
-
-<Route  path='/register' element={<Register/>}/>
-<Route  path='/signup' element={<SignUp/>}/>
-  
-
-
-</Routes>
-</BrowserRouter>
-
- 
-
-  </div> 
+    <div>
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/about/*' element={<About />} />
+          <Route path='/ticket/*' element={<Ticket />}>
+            <Route path='list' element={<FlightList />} />
+          </Route>
+          <Route path='/service/s1/s2/s3/*' element={<Service />}>
+            <Route path='addflight' element={<AddFlights />} />
+          </Route>
+          <Route path='/bookingdetails/*' element={<BookingDetails />}>
+            <Route path='search' element={<Search />} />
+            <Route path='SearchCon' element={<SearchList />} />
+          </Route>
+          <Route path='CheckIn' element={<CheckIn />} />
+          <Route path='/register' element={<Register />} />
+          <Route path='/signup' element={<SignUp />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
-  
 }
 
 export default App
