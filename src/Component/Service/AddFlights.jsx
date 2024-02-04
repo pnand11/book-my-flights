@@ -25,28 +25,45 @@ function AddFlights() {
   const [seatsAvailableText, setSeatsAvailableText] = useState('');
 
   const handleChange = () => {
+    const layoversArray = layoversText != '' ? layoversText.split(', ') : [];
+    const layoverDurationsArray = layoverDurationsText != '' ? layoverDurationsText.split(', ') : [];
+
     setAirlines(airlinesText.split(', '));
     setFlightNumbers(flightNumbersText.split(', '));
     setFlightDurations(flightDurationsText.split(', '));
-    setLayovers(layoversText.split(', '));
-    setLayoverDurations(layoverDurationsText.split(', '));
+    setLayovers(layoversArray);
+    setLayoverDurations(layoverDurationsArray);
     setSeatsAvailable(parseInt(seatsAvailableText));
   }
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const data = {
-      airlines,
-      flightNumbers,
-      flightDurations,
-      source,
-      destination,
-      departureTime,
-      arrivalTime,
-      seatsAvailable,
-      layovers,
-      layoverDurations
-    };
+    let data = {}
+    if (layovers.length > 0 && layoverDurations.length > 0) {
+      data = {
+        airlines,
+        flightNumbers,
+        flightDurations,
+        source,
+        destination,
+        departureTime,
+        arrivalTime,
+        seatsAvailable,
+        layovers,
+        layoverDurations
+      };
+    } else {
+      data = {
+        airlines,
+        flightNumbers,
+        flightDurations,
+        source,
+        destination,
+        departureTime,
+        arrivalTime,
+        seatsAvailable
+      };
+    }
     axios.post('https://bookmyflights-server.onrender.com/flights/saveFlight', data)
       .then(res => {
         console.log(res);
@@ -57,58 +74,86 @@ function AddFlights() {
   }
 
   return (
-    <div className='addFlights'>
+    <div className='addFlight'>
       <h1 className='hOne'>ADD FLIGHTS</h1>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label>Airlines</label>
-          <input type="text" placeholder='airline1, airline2' value={airlinesText} onChange={(e) => setAirlinesText(e.target.value)} />
-        </div>
-        <div>
-          <label>Flight Numbers</label>
-          <input type="text" placeholder='fln1, fln2' value={flightNumbersText} onChange={(e) => setFlightNumbersText(e.target.value)} />
-        </div>
-        <div>
-          <label>Flight Durations</label>
-          <input type="text" placeholder='hh:mm:ss, hh:mm:ss' value={flightDurationsText} onChange={(e) => setFlightDurationsText(e.target.value)} />
-        </div>
-        <div>
-          <label>Departure Airport</label>
-          <input type="text" value={source} onChange={(e) => setSource(e.target.value)} />
-        </div>
-        <div>
-          <label>Arrival Airport</label>
-          <input type="text" value={destination} onChange={(e) => setDestination(e.target.value)} />
-        </div>
-        <div>
-          <label>Departure Time</label>
-          <input 
-            type="datetime-local" 
-            value={departureTime} 
-            onChange={(e) => setDepartureTime(e.target.value.toString())} 
-          />
-        </div>
-        <div>
-          <label>Arrival Time</label>
-          <input 
-            type="datetime-local" 
-            value={arrivalTime} 
-            onChange={(e) => setArrivalTime(e.target.value.toString())} 
-          />
-        </div>
-        <div>
-          <label>Seats Available</label>
-          <input type="text" value={seatsAvailableText} onChange={(e) => setSeatsAvailableText(e.target.value)} />
-        </div>
-        <div>
-          <label>Layovers</label>
-          <input type="text" placeholder='lay1, lay2' value={layoversText} onChange={(e) => setLayoversText(e.target.value)} />
-        </div>
-        <div>
-          <label>Layover Durations</label>
-          <input type="text" placeholder='hh:mm:ss, hh:mm,ss' value={layoverDurationsText} onChange={(e) => setLayoverDurationsText(e.target.value)} />
-        </div>
-        <button type="submit" onClick={handleChange}>Add Flight</button>
+        <center>
+          <table className='addFlightFormTable'>
+            <tr>
+              <td>Airlines</td>
+              <td>
+                <input type="text" placeholder='airline1, airline2' value={airlinesText} onChange={(e) => setAirlinesText(e.target.value)} />
+              </td>
+            </tr>
+            <tr>
+              <td>Flight Numbers</td>
+              <td>
+                <input type="text" placeholder='fln1, fln2' value={flightNumbersText} onChange={(e) => setFlightNumbersText(e.target.value)} />
+              </td>
+            </tr>
+            <tr>
+              <td>Flight Durations</td>
+              <td>
+                <input type="text" placeholder='hh:mm:ss, hh:mm:ss' value={flightDurationsText} onChange={(e) => setFlightDurationsText(e.target.value)} />
+              </td>
+            </tr>
+            <tr>
+              <td>Departure Location</td>
+              <td>
+                <input type="text" value={source} onChange={(e) => setSource(e.target.value)} />
+              </td>
+            </tr>
+            <tr>
+              <td>Arrival Location</td>
+              <td>
+                <input type="text" value={destination} onChange={(e) => setDestination(e.target.value)} />
+              </td>
+            </tr>
+            <tr>
+              <td>Departure Time</td>
+              <td>
+                <input
+                  type="datetime-local"
+                  value={departureTime}
+                  onChange={(e) => setDepartureTime(e.target.value.toString())}
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Arrival Time</td>
+              <td>
+                <input
+                  type="datetime-local"
+                  value={arrivalTime}
+                  onChange={(e) => setArrivalTime(e.target.value.toString())}
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>Seats Available</td>
+              <td>
+                <input type="number" value={seatsAvailableText} onChange={(e) => setSeatsAvailableText(e.target.value)} />
+              </td>
+            </tr>
+            <tr>
+              <td>Layovers</td>
+              <td>
+                <input type="text" placeholder='airport1, airport2' value={layoversText} onChange={(e) => setLayoversText(e.target.value)} />
+              </td>
+            </tr>
+            <tr>
+              <td>Layover Durations</td>
+              <td>
+                <input type="text" placeholder='hh:mm:ss, hh:mm:ss' value={layoverDurationsText} onChange={(e) => setLayoverDurationsText(e.target.value)} />
+              </td>
+            </tr>
+            <tr>
+              <td colSpan='2'>
+                <button type="submit" className='button-30' onClick={handleChange}>Add Flight</button>
+              </td>
+            </tr>
+          </table>
+        </center>
       </form>
     </div>
   )

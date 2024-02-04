@@ -2,8 +2,6 @@ import {Link} from 'react-router-dom'
 
 function Header() {
   return (
-    
-
     <nav className='nav'>
     <div className='logo'>
     <h1>thhhhh</h1>

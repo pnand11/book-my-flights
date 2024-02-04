@@ -10,7 +10,7 @@
   padding: 20px;
   display: flex;
   background-color: rgb(103, 102, 196);
-
+  position: fixed
 }
 
 .logo {
@@ -50,32 +50,18 @@
   padding: 10px;
   background-color: skyblue;
 }
-
 /** ----------------------------------Booking-------------- **/
-
-
-
-
-
-
 /**-------------------------------------service---------------**/
 .service {
   text-align: center;
-
 }
-
-
 /**-----------------------------Add Flights--------------------------------**/
-
 .addFlight {
   text-align: center;
-  border-radius: 10px;
-  border-style: double;
-  height: 700px;
+  height: 100vh;
   background-image: url("https://st3.depositphotos.com/5624298/i/600/depositphotos_188965938-stock-photo-closeup-miniature-airplane-colored-background.jpg");
   background-repeat: no-repeat;
   background-size: 100%, 100%;
-
 }
 
 .inputAdd {
@@ -85,11 +71,18 @@
   border-bottom: 2px solid red;
   background-color: whitesmoke;
   font-size: 20px;
-
 }
 
 .inputAdd[type=text]:focus {
   background-color: lightblue;
+}
+
+.addFlightFormTable {
+  margin-top: 30px;
+  background-color: #ffffff55;
+  border-radius: 20px;
+  padding: 10px 50px;
+  backdrop-filter: blur(5px);
 }
 
 /* CSS */
