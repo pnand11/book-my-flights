@@ -9,8 +9,8 @@ function AddFlights() {
   const [airlines, setAirlines] = useState([]);
   const [flightNumbers, setFlightNumbers] = useState([]);
   const [flightDurations, setFlightDurations] = useState([]);
-  const [departure, setDeparture] = useState('');
-  const [arrival, setArrival] = useState('');
+  const [source, setSource] = useState('');
+  const [destination, setDestination] = useState('');
   const [departureTime, setDepartureTime] = useState('');
   const [arrivalTime, setArrivalTime] = useState('');
   const [seatsAvailable, setSeatsAvailable] = useState(0);
@@ -39,8 +39,8 @@ function AddFlights() {
       airlines,
       flightNumbers,
       flightDurations,
-      departure,
-      arrival,
+      source,
+      destination,
       departureTime,
       arrivalTime,
       seatsAvailable,
@@ -73,12 +73,12 @@ function AddFlights() {
           <input type="text" placeholder='hh:mm:ss, hh:mm:ss' value={flightDurationsText} onChange={(e) => setFlightDurationsText(e.target.value)} />
         </div>
         <div>
-          <label>Departure</label>
-          <input type="text" value={departure} onChange={(e) => setDeparture(e.target.value)} />
+          <label>Departure Airport</label>
+          <input type="text" value={source} onChange={(e) => setSource(e.target.value)} />
         </div>
         <div>
-          <label>Arrival</label>
-          <input type="text" value={arrival} onChange={(e) => setArrival(e.target.value)} />
+          <label>Arrival Airport</label>
+          <input type="text" value={destination} onChange={(e) => setDestination(e.target.value)} />
         </div>
         <div>
           <label>Departure Time</label>
