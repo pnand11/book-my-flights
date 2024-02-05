@@ -4,7 +4,7 @@ function Header() {
   return (
     <nav className='nav'>
     <div className='logo'>
-    <h1>thhhhh</h1>
+    <h1>Book My Flights</h1>
     </div>
 
     <ul>
