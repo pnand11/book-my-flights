@@ -25,7 +25,7 @@ function App() {
           <Route path='/ticket/*' element={<Ticket />}>
             <Route path='list' element={<FlightList />} />
           </Route>
-          <Route path='/service/s1/s2/s3/*' element={<Service />}>
+          <Route path='/service' element={<Service />}>
             <Route path='addflight' element={<AddFlights />} />
           </Route>
           <Route path='/bookingdetails/*' element={<BookingDetails />}>

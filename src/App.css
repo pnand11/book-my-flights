@@ -414,3 +414,58 @@ td {
 .cardNum {
   margin-left: 120px;
 }
+
+/* ------------------------Signup--------------------------------- */
+
+.main-box{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.signUp-box{
+
+  height: 350px;
+  width: 70%;
+  /* background-color: skyblue; */
+  background-image: url("https://images.pexels.com/photos/104826/aircraft-holiday-sun-tourism-104826.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  /* background-size: cover; */
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  /* justify-content: center; */
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+.form{
+  display: flex;
+  flex-direction: column;
+}
+.inp{
+  padding: 20px;
+  height: 25px;
+  width: 360px;
+  border-radius: 10px;
+  margin: 15px;
+  border: 1px solid grey;
+  background: transparent;
+  font-size: larger;
+  font-weight: bolder;
+}
+.btn{
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  border: 1px solid grey;
+  width: 360px;
+  margin: 15px;
+  border-radius: 10px;
+  background-color: #bcedfc;
+}
+.btn:hover{
+  background-color: #2699bc;
+}

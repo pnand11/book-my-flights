@@ -26,7 +26,7 @@ function Header() {
     </li>
 
       <li>
-        <Link className='link' to="/service/s1/s2/s3">Service</Link>
+        <Link className='link' to="/service/s1/s2/s3/">Service</Link>
       </li>
 
       <div className='signin'>

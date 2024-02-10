@@ -32,7 +32,7 @@ function Search() {
 
   return (
     <div className='from'>
-<<<<<<< Updated upstream
+
       <form action='/searchList'>
         <div className='Search'>
           <label htmlFor='From' className='lable'>source</label>
@@ -61,7 +61,7 @@ function Search() {
           <button type='submit' className='button' onClick={e => OnClick(e)} >Search Flight</button>
         </div>
       </form>
-=======
+
             <form action='/searchList'>
                 
                 <div className='Search'>
